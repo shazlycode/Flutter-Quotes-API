@@ -19,7 +19,7 @@ class _MainScreenState extends State<MainScreen>with QuoteApiService {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title:   Text('Quotes'.toUpperCase()),),
-      body: Padding(padding: EdgeInsets.all(10),child: FutureBuilder(future: fetchAndSetQuotes(),builder: (context, snapshot){
+      body: Padding(padding:const EdgeInsets.all(10),child: FutureBuilder(future: fetchAndSetQuotes(),builder: (context, snapshot){
         if(snapshot.connectionState==ConnectionState.waiting){
           return Center(child:SpinKitDoubleBounce(color: Colors.amber),);
         }return ListView.builder(itemCount: quotes.length,itemBuilder: (context, index){
